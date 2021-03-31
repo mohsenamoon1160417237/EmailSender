@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'delete_confirm.css' %}">
+  <link rel="stylesheet" href="{% static 'responsive_delete_confirm.css' %}">
+{% endblock %}
+
+{% block title %}
+
+  Delete contact
+
+{% endblock %}
+
+
+{% block content %}
+
+<div id="delete-confirm">
+<div class="delete-confirm">
+
+<h2 class="title">Are you sure you want to delete conatct "{{ contact.name }}" ?</h2>
+<p class="description">By pressing ok contact "{{ contact.name }}" will be deleted premanently.</p>
+
+
+<div class="buttons">
+<form action="{% url 'delete_contact' contact.id contact.slug %}"
+      class="delete-contact"
+      method="post">
+  
+    {% csrf_token %}
+  
+    <input type="submit" class="input-delete-contact" value="OK">
+</form>
+
+<a href="{% url 'contacts_all' %}" class="cancel-delete">Cancel</a>
+</div>
+
+</div>
+</div>
+<style>
+    .buttons{
+        display: flex;
+        justify-content: space-around;
+        width: 200px;
+    }
+</style>
+
+{% endblock %}

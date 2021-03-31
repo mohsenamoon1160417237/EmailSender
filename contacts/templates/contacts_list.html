@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Contacts
+{% endblock %}
+
+
+{% block content %}
+
+<h2 class="main-title">Send email in mass amount</h2>
+<div id="emails-contacts">
+  <div id="email">
+
+    <div class="email-form-heading">
+    <h2 class="email-heading">Create e-mail</h2>
+    </div>
+    <form method="post" class="email-form">
+      {% csrf_token %}
+            
+            {{ email_form.subject }}
+    
+
+
+          {{ email_form.message }}
+
+
+      <input type="submit" value="Create" class="email-form-input">
+    </form>
+  </div>
+
+  
+
+    <div class="emails">
+    
+      <h3 class="emails-heading"><span class="emails-title">Emails</span></h3>
+      <div class="emails-body">
+        {% if emails.count == 0 %}
+          <div class="empty">Empty</div>
+        {% endif %}
+      {% for email in emails %}
+        <div class="email">
+          <div class="subject">subject: "{{ email.subject }}"</div>
+          <form action="{% url 'delete_email' email.id %}" 
+                class="delete-email-form"
+                method="post">
+
+                {% csrf_token %}
+
+                <input type="submit" class="delete-email-input" value="Delete">
+          </form>
+        </div>
+      {% endfor %}
+      
+    </div>
+    <div class="receivers-send-email">
+    {% if selected_contacts.count > 0 %}
+    <div class="receivers">Receivers: 
+      {% for contact in selected_contacts %}
+        {{ contact.name }} ,
+      {% endfor %}
+    </div>
+
+    {% endif %}
+    <form action="{% url 'send_emails' %}"
+          class="send-mail-form"
+          method="post">
+
+          {% csrf_token %}
+          <input type="submit" 
+                 class="send-mail-input"
+                 value="Send Emails">
+    </form>
+  </div>
+  </div>
+
+
+  
+    <div id="contacts">
+     
+    {% if contacts.count > 0 %}
+    <h3 class="select-contacts-title">Select contacts to send e-mail</h3>
+    {% endif %}
+
+    
+    
+
+      <div class="contacts"> 
+    {% for contact in contacts %}
+      <div class="contact-button">
+    <div class="contact">
+    
+      {% if contact.profile_picture %}
+      <a href="{{ contact.profile_picture.url }}">
+      <img class="contact-picture" src="{{ contact.profile_picture.url }}" alt="image">
+      </a>
+      {% endif %}
+
+    <div class="info">
+      <div class="contact-name">{{ contact.name }}</div>
+      <div class="contact-email contact-info">{{ contact.email }}</div>
+    </div>
+
+      
+      <div class="buttons">
+        <a href="{% url 'confirm_delete' contact.id contact.slug %}" 
+           class="delete-confirm-link button">Delete</a>
+        <a href="{% url 'update_contact' contact.id %}"
+           class="edit-contact-link button">Update</a>
+      </div>
+
+    </div>
+    
+    <form action="{% url 'select_contact' contact.id contact.slug %}"
+            class="select-contact-form"
+            method="post">
+            {% csrf_token %}
+
+            <input type="submit"
+                   value="{% if contact.is_selected %}Unselect{% else %}Select{% endif %}"
+                   class="input-select-contact">
+
+      </form>
+    </div>
+    {% endfor %}
+  </div> 
+
+<a href="{% url 'create_contact' %}" class="create-contact-link"><i class="fa fa-plus"></i> Add new Contact</a>
+</div>
+
+</div>
+
+
+   
+{% endblock %}

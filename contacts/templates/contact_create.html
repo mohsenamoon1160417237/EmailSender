@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'contact_create.css' %}">
+<link rel="stylesheet" href="{% static 'responsive_create_contact.css' %}">
+{% endblock %}
+
+{% block title %}
+Add new Contact
+{% endblock %}
+
+
+{% block content %}
+
+<div id="contact-create">
+<div class="contact-create">
+<h2 class="add-contact">Add Contact</h2>
+
+<form action="" method="post" class="create-contact-form" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="email">
+      {{ form.email.label_tag }} <br>
+      {{ form.email }}
+    </div>
+    <div class="name">
+      {{ form.name.label_tag }} <br>
+      {{ form.name }}
+    </div>
+    <div class="profile-image">
+      {{ form.profile_picture.label_tag }} <br>
+      {{ form.profile_picture }}
+    </div>
+    <input type="submit" value="Save" class="input-create-contact">
+</form>
+</div>
+</div>
+
+{% endblock %}

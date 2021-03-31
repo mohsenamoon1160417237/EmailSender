@@ -1,0 +1,477 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+
+    font-size: 62.5%;
+}
+
+body{
+
+    font-size: 1.6rem;
+    padding: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+@keyframes moveLeft{
+
+    0%{
+        transform: translateX(300px);
+    }
+
+    60%{
+        transform: translateX(-150px);
+    }
+
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveDown{
+
+    0%{
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+
+    100%{
+
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.main-title{
+
+    display: flex;
+    justify-content: center;
+    font-size: 2.8rem;
+    margin-top: 2rem;
+}
+
+#email{
+
+    position: fixed;
+    bottom: 0.5rem;
+    right: 1rem;
+    height: 60rem;
+    width: 42rem;
+}
+
+.email-form-heading{
+
+    background-color: #1C2833;
+    color: #fff;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+.email-heading{
+
+    font-size: 2.4rem;
+    animation: moveLeft 1.5s backwards 0.8s;
+}
+
+
+
+.email-form{
+
+    background-color: #EAEDED;
+    padding: 3rem 2.5rem;
+    padding-top: 3.5rem;
+}
+
+
+
+.subject-field{
+
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background-color: #D5D8DC;
+    border: 1px solid #D5D8DC;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family:'Times New Roman', Times, serif;
+    transition: all 0.5s;
+}
+
+
+.subject-field:focus,
+.message-field:focus{
+
+    outline: none;
+    border: 1px solid #85C1E9;
+    box-shadow: 0 0 10px #85C1E9;
+    transition: all 0.2s;
+}
+
+
+.message-field{
+
+    padding: 1rem 1.5rem;
+    width: 100%;
+    background-color: #D5D8DC;
+    border: 1px solid #D5D8DC;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    transition: all 0.5s;
+}
+
+
+
+.email-form-input{
+
+    width: 100%;
+    background-color: #3498DB;
+    border: 1px solid #3498db;
+    height: 5rem;
+    color: #fff;
+    transition: all 0.5s;
+    font-size: 1.5rem;
+}
+
+
+.email-form-input:hover{
+
+    cursor: pointer;
+    transition: all 0.5s;
+    transform: translateY(-8px);
+    box-shadow: 3px 3px 15px #3498db;
+}
+
+.email-form-input:focus{
+
+    transform: translateY(2px);
+    transition: all 0.2s;
+    outline: none;
+}
+
+#emails-contacts{
+
+    display: flex;
+    position: relative;
+    top: 8rem;
+}
+
+#emails-buttons{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.emails{
+    
+    width: 35rem;
+    margin-right: 6.5rem;
+    margin-bottom: 3rem;
+    margin-top: 6.8rem;
+    position: relative;
+    bottom: 9.4rem;
+    left: 1rem;
+}
+
+
+.emails-heading{
+
+    position: relative;
+    top: 8rem;
+    display: flex;
+    justify-content: center;
+    font-size: 2.2rem;
+    margin-bottom: 5rem;
+    font-weight: 100;
+}
+
+.emails-title{
+
+    animation: moveDown 1s backwards 0.4s;
+}
+
+.emails-body{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 15rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.email:last-child{
+
+    margin-bottom: 3rem;
+}
+
+.email{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;  
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    background-color: #EAEDED;
+    padding: 3.5rem 2rem;
+}
+
+
+.email .subject{
+
+    color: #000;
+    width: 80%;
+    padding: 1.6rem 3rem;
+    margin: 0.6rem 0;
+    font-size: 1.7rem;
+}
+
+.email .subject-field::placeholder,
+.email .message-field::placeholder{
+
+    font-size: 1.5rem;
+}
+
+
+
+.delete-email-input{
+
+    padding: 1rem 1.5rem;
+    border-radius: 3rem;
+    background-color: #000;
+    border: 0.1px solid #000;
+    color: #fff;
+    transition: all 0.2s;
+    font-size: 1.5rem;
+    
+}
+
+.delete-email-input:hover{
+
+    cursor: pointer;
+    background-color: #85C1E9;
+    border: 1px solid #85C1E9;
+    color: #000;
+    transition: all 0.5s;
+    
+}
+
+.delete-email-input:focus{
+
+    outline: none;
+    box-shadow: 0 0 6px #000;
+}
+
+
+.receivers{
+
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+}
+
+.send-mail-input{
+
+
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    background-color: #000;
+    border: 1px solid #000;
+    color: #fff;
+    transition: all 0.5s;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+
+}
+
+.send-mail-input:hover{
+
+    background-color: #5DADE2;
+    border: 1px solid #5DADE2;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+
+#contacts{
+
+    width: 53rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 5.5rem;
+    
+}
+
+
+
+.select-contacts-title{
+
+    font-size: 2.2rem;
+    margin-bottom: 8rem;
+    font-family: 'Times New Roman';
+    position: relative;
+    font-weight: 100;
+}
+
+
+
+
+.contacts{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+
+.contact{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 53rem;
+    padding: 1.5rem 3rem;
+    background-color: #EAEDED;
+}
+
+.contact-button{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+
+.contact-picture{
+
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+}
+
+.contact .info{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+}
+
+.contact-info{
+
+    margin-top: 1.5rem;
+}
+
+.contact-name,
+.contact-email{
+
+    font-size: 1.9rem;
+}
+
+
+.buttons{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+.buttons .delete-confirm-link{
+
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+    transition: all 0.5s;
+}
+
+
+.buttons .edit-contact-link{
+
+    background-color: #3498DB;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    transition: all 0.5s;
+}
+
+.select-contact-form{
+
+    margin-bottom: 2rem;
+    align-self: flex-start;
+    margin-left: 3rem;
+    margin-top: 4.5rem;
+
+}
+
+.input-select-contact{
+
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: 1px solid #000;
+    background-color: #EAEDED;
+    transition: all 0.5s;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+}
+
+.input-select-contact:hover{
+
+    cursor: pointer;
+    transform: translateY(-0.7rem);
+    transition: all 0.5s;
+}
+
+.input-select-contact:focus{
+    outline: none;
+}
+
+.create-contact-link{
+
+    margin-bottom: 3rem;
+    margin-top: 5rem;
+    display: flex;
+    width: 13rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.receivers-send-email{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 2rem;
+}

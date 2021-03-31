@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+ <link rel="stylesheet" href="{% static 'contact_create.css' %}">
+ <link rel="stylesheet" href="{% static 'responsive_update_contact.css' %}">
+{% endblock %}
+
+{% block title %}
+Update contact
+{% endblock %}
+
+
+{% block content %}
+
+<div id="contact-create">
+  <div class="contact-create">
+<h2 class="add-contact">Update contact "{{ object.name }}"</h2>
+<br>
+
+<form action="." method="post" class="create-contact-form" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="email">
+        {{ form.email }}
+      </div>
+      <div class="name">
+        {{ form.name }}
+      </div>
+      <div class="profile-image">
+        {{ form.profile_picture.label_tag }} <br>
+        {{ form.profile_picture }}
+      </div>
+      <input type="submit" class="input-create-contact" value="Save">
+</form>
+</div>
+</div>
+
+{% endblock %}

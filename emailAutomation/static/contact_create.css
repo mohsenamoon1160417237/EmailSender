@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+
+    background: linear-gradient(to bottom left,#ff00ff,#00BFFF) no-repeat center center/cover;
+    height: 100vh;
+}
+
+#contact-create{
+
+    position: relative;
+    top: 25vh;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-create{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    width: 23rem;
+}
+
+.add-contact{
+
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.create-contact-form{
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.field{
+
+    width: 100%;
+    margin-bottom: 1.3rem;
+    margin-top: 0.8rem;
+    padding: 0 0.5rem;
+    border: none;
+    border-bottom: 1px solid #d3d3d3;
+    padding-bottom: 0.8rem;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #fff;
+}
+
+
+.field:focus{
+
+    outline: none;
+    border-bottom: 1px solid #000;
+
+}
+
+
+label[for="id_email"],
+label[for="id_name"],
+label[for="id_profile_picture"]{
+
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.image-field{
+
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.input-create-contact{
+
+    background: linear-gradient(to right,#ff00ff,#00bfff);
+    border: none;
+    padding: 0.6rem;
+    border-radius: 1rem;
+    color: #fff;
+    transition: all 0.5s;
+}
+
+.input-create-contact:hover{
+
+    cursor: pointer;
+    transform: translateY(-0.7rem);
+    transition: all 0.5s;
+}
+
+.input-create-contact:focus{
+
+    transition: all 0.1s;
+    transform: translateY(-0.2rem);
+    outline: none;
+}
+
+label[for="id_profile_picture"]{
+
+    margin-left: 0;
+}
+
+.profile-image{
+
+    margin-left: 0.5rem;
+}

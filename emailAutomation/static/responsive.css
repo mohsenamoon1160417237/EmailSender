@@ -1,0 +1,140 @@
+@media only screen and (max-width:1520px)
+and (min-width:1280px){
+
+    html{
+        font-size: 52%;
+    }
+}
+
+@media only screen and (max-width:1280px)
+and (min-width:1120px){
+
+    html{
+
+        font-size: 45%;
+    }
+
+    #email{
+
+        bottom: 5rem;
+        right: 1.5rem;
+    }
+}
+
+@media only screen and (max-width:1120px)
+and (min-width:1000px){
+
+    html{
+
+        font-size: 40%;
+    }
+
+    #email{
+
+        bottom: 8rem;
+        right: 1.5rem;
+    }
+}
+
+@media only screen and (max-width:1000px)
+and (min-width:860px){
+
+    html{
+        font-size: 35%;
+    }
+
+    #email{
+
+        bottom: 13rem;
+    }
+}
+
+@media only screen and (max-width:860px)
+and (min-width:450px){
+
+    html{
+
+        font-size: 30%;
+    }
+
+
+
+
+   #emails-contacts{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+
+   #email{
+
+    position: relative;
+    margin-top: 10rem;
+    width: 58rem;
+    height: 75rem;
+    margin-bottom: 10rem;
+}
+
+   .emails{
+
+    width: 75rem;
+   }
+
+   .contacts{
+
+    width: 75rem;
+   }
+
+   .contact{
+
+    width: 70rem;
+   }
+
+   .create-contact-link{
+
+    margin-bottom: 10rem;
+   }
+}
+
+
+@media only screen and (max-width:450px)
+and (min-width:300px){
+
+    html{
+
+        font-size: 25%;
+    }
+
+    #email{
+
+        position: relative;
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+        width: 63rem;
+    }
+
+    #emails-contacts{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .emails{
+
+        width:68rem;
+    }
+
+    .contacts{
+
+        width: 70rem;
+    }
+
+    .contact{
+
+        width: 58rem;
+    }
+
+}
